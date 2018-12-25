@@ -18,7 +18,6 @@ RUN set -x \
     && cd .. \
     && rm -rf Python-${Python_VERSION} \
     && yum groupinstall -y 'Development Tools' \
-    && yum remove -y $INSTALL_PKGS \
     && yum clean all \
     && chown 1001:0 /home/jenkins
 
