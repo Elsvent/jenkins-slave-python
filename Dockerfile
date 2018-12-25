@@ -2,7 +2,7 @@
 FROM openshift/jenkins-slave-base-centos7
 
 # specify wanted version of python
-ENV PYTHON_VERSION 3.6.1
+ENV PYTHON_VERSION 3.6.7
 
 # install python
 RUN set -x \
@@ -17,7 +17,7 @@ RUN set -x \
     && make altinstall \
     && cd .. \
     && rm -rf Python-${Python_VERSION} \
-    && yum groupinstall 'Development Tools' \
+    && yum groupinstall -y 'Development Tools' \
     && yum remove -y $INSTALL_PKGS \
     && yum clean all \
     && chown 1001:0 /home/jenkins
