@@ -19,7 +19,8 @@ RUN set -x \
     && rm -rf Python-${Python_VERSION} \
     && yum groupinstall -y 'Development Tools' \
     && yum clean all \
-    && chown 1001:0 /home/jenkins
+    && chown 1001:0 /home/jenkins \
+    && chown 1001:0 /var/log
 
 # switch to non-root for openshift usage
 USER 1001
